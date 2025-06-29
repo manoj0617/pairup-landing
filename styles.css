@@ -176,6 +176,78 @@ section {
     font-size: 0.9rem;
 }
 
+/* Back to Home Link */
+.back-link {
+    margin-bottom: 30px;
+}
+
+.back-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.back-link a:hover {
+    transform: translateX(-5px);
+}
+
+/* Policy Pages Styles */
+.policy-content {
+    margin-bottom: 30px;
+}
+
+.policy-details {
+    margin-top: 30px;
+}
+
+.policy-details h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.policy-details h2:first-child {
+    margin-top: 0;
+}
+
+.policy-details p {
+    margin-bottom: 15px;
+}
+
+.policy-list {
+    list-style-type: none;
+    margin: 15px 0 20px 0;
+    padding-left: 20px;
+}
+
+.policy-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.policy-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.contact-details {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.contact-note {
+    margin-top: 15px;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #666;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .content-card {
