@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Open in Default Browser",
+      "type": "shell",
+      "command": "explorer.exe",
+      "args": [
+        "${workspaceFolder}\\index.html"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "silent",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
