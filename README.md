@@ -22,6 +22,7 @@ A modern, responsive e-commerce landing page for PairUp, an AI-powered platform 
 - `styles.css` - Custom styling with responsive design and e-commerce layout
 - `contact.html` - Customer support and contact information
 - `terms.html` - Terms of service
+- `privacy.html` - Privacy policy and data protection information
 - `refunds.html` - Returns and refund policy
 - `shipping.html` - Shipping information
 - `vercel.json` - Vercel deployment configuration
