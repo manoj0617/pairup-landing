@@ -67,6 +67,70 @@ body {
     font-weight: 300;
 }
 
+/* Navigation Bar Styles */
+.navbar {
+    background-color: var(--card-bg);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo h1 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section Styles */
+.hero {
+    text-align: center;
+    padding: 60px 0;
+    margin-bottom: 50px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-weight: 300;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Section Styles */
 .section-title {
     font-size: 1.5rem;
@@ -411,6 +475,36 @@ section {
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+    }
+    
+    /* Mobile Responsiveness for Navigation */
+    .nav-container {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav-menu {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .content-card {
+        padding: 20px;
     }
 }
 

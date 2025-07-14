@@ -1,6 +1,6 @@
-# PairUp Landing Page
+# PairUp - Personalized Product Discovery
 
-A modern, responsive landing page for PairUp, a Telegram-based subscription matchmaking platform.
+A modern, responsive e-commerce landing page for PairUp, an AI-powered platform for discovering personalized lifestyle accessories, gadgets, and digital goods.
 
 ## Features
 
@@ -10,11 +10,17 @@ A modern, responsive landing page for PairUp, a Telegram-based subscription matc
 - Lightweight CSS with no external libraries or frameworks
 - Accessible design with proper ARIA labels
 - Fast loading and GitHub Pages compatible
+- Product showcase with cards layout
+- Navigation bar with smooth scrolling
 
 ## Structure
 
-- `index.html` - Main landing page with semantic HTML structure
-- `styles.css` - Custom styling with responsive design
+- `index.html` - Main landing page with hero section and product showcase
+- `styles.css` - Custom styling with responsive design and e-commerce layout
+- `contact.html` - Customer support and contact information
+- `terms.html` - Terms of service
+- `refunds.html` - Refund policy
+- `shipping.html` - Shipping information
 
 ## Design Elements
 
@@ -30,12 +36,14 @@ A modern, responsive landing page for PairUp, a Telegram-based subscription matc
 - **UI Elements**:
   - Rounded corners (12px border-radius)
   - Soft shadows for depth
-  - Subtle hover effects on interactive elements
-  - Card-based content layout
+  - Hover effects on interactive elements
+  - Card-based product layout
+  - Responsive navigation bar
+  - Product showcase grid
 
 ## Deployment
 
-This landing page is built to work on any static hosting service:
+This e-commerce landing page is built to work on any static hosting service:
 
 1. GitHub Pages (recommended)
 2. Netlify
@@ -53,17 +61,20 @@ To view the site locally:
 
 ## Business Information
 
-The website serves as a business information page for PairUp, which operates primarily via Telegram. The landing page provides:
+The website serves as an e-commerce platform for PairUp, which specializes in AI-powered product discovery. The landing page provides:
 
-- Platform overview
-- Key features
-- Contact information
-- Terms and privacy policy placeholders
+- Platform overview and value proposition
+- Featured product showcase
+- How the AI recommendation system works
+- Customer contact information
+- Comprehensive policy pages (terms, refunds, shipping)
 
 ## Customization
 
-To customize this landing page:
+To customize this e-commerce landing page:
 
-1. Update text content in `index.html`
+1. Update product information and descriptions in `index.html`
 2. Modify colors and styles in `styles.css`
-3. Replace placeholder links with actual URLs if needed
+3. Replace product placeholder images with actual product photos
+4. Update contact information and policies as needed
+5. Add real product links and shopping functionality
