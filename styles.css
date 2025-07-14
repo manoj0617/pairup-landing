@@ -31,6 +31,11 @@ body {
     flex-direction: column;
 }
 
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Main Container */
 .container {
     max-width: 900px;
@@ -100,10 +105,33 @@ body {
     color: var(--text-color);
     font-weight: 500;
     transition: var(--transition);
+    position: relative;
 }
 
 .nav-link:hover {
     color: var(--primary-color);
+}
+
+.nav-link:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        width: 0;
+        left: 50%;
+    }
+    to {
+        width: 100%;
+        left: 0;
+    }
 }
 
 /* Hero Section Styles */
@@ -283,6 +311,23 @@ section {
     transition: var(--transition);
     min-width: 180px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
 }
 
 .cta-button.primary {
@@ -445,6 +490,143 @@ section {
     color: #666;
 }
 
+/* Buy Now Button Styles */
+.buy-button {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    margin-top: 8px;
+    text-align: center;
+    transition: var(--transition);
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.buy-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.buy-button:hover::before {
+    left: 100%;
+}
+
+.buy-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    color: white;
+    text-decoration: none;
+}
+
+/* Checkout Page Styles */
+.checkout-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.order-summary, .payment-section {
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    border: 1px solid #e0e0e0;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.item-info h3 {
+    margin: 0 0 5px 0;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.item-description {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.item-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.order-total {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.final-total {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid var(--primary-color);
+}
+
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.payment-method:hover, .payment-method.active {
+    border-color: var(--primary-color);
+    background-color: rgba(255, 51, 102, 0.05);
+}
+
+.payment-icon {
+    font-size: 1.5rem;
+}
+
+.security-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.security-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .content-card {
@@ -536,5 +718,23 @@ section {
     .cta-button {
         min-width: 150px;
         padding: 12px 25px;
+    }
+}
+
+/* Checkout Page Specific Styles */
+@media (max-width: 768px) {
+    .checkout-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .order-summary, .payment-section {
+        padding: 20px;
+    }
+    
+    .order-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
     }
 }

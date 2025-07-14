@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - PairUp</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Razorpay Checkout Script -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>PairUp</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#collections" class="nav-link">Collections</a>
+                <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="index.html#policies" class="nav-link">Policies</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="content-card">
+            <!-- Back to Home Link -->
+            <div class="back-link">
+                <a href="index.html">&larr; Back to Products</a>
+            </div>
+            
+            <!-- Header -->
+            <header class="header">
+                <h1 class="logo">Checkout</h1>
+            </header>
+            
+            <!-- Checkout Section -->
+            <section class="checkout-section">
+                <div class="checkout-container">
+                    <div class="order-summary">
+                        <h2 class="section-title">Order Summary</h2>
+                        <div class="order-item">
+                            <div class="item-info">
+                                <h3 id="product-name">AI Productivity Kit</h3>
+                                <p class="item-description">Complete digital toolkit for enhanced productivity</p>
+                            </div>
+                            <div class="item-price">
+                                <span id="product-price">₹999</span>
+                            </div>
+                        </div>
+                        <div class="order-total">
+                            <div class="total-row">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">₹999</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Tax (18% GST):</span>
+                                <span id="tax">₹180</span>
+                            </div>
+                            <div class="total-row final-total">
+                                <span><strong>Total:</strong></span>
+                                <span id="total"><strong>₹1,179</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-section">
+                        <h2 class="section-title">Payment Details</h2>
+                        <div class="payment-methods">
+                            <div class="payment-method active">
+                                <span class="payment-icon">💳</span>
+                                <span>Credit/Debit Card</span>
+                            </div>
+                            <div class="payment-method">
+                                <span class="payment-icon">🏦</span>
+                                <span>Net Banking</span>
+                            </div>
+                            <div class="payment-method">
+                                <span class="payment-icon">📱</span>
+                                <span>UPI</span>
+                            </div>
+                        </div>
+                        
+                        <button id="pay-button" class="cta-button primary">
+                            Pay ₹1,179
+                        </button>
+                        
+                        <div class="security-info">
+                            <p>🔒 Your payment information is secure and encrypted</p>
+                            <p>💰 This is a demo checkout using Razorpay test mode</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 PairUp. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Razorpay Test Configuration
+        const options = {
+            "key": "rzp_test_1DP5mmOlF5G5ag", // Test Key ID
+            "amount": "117900", // Amount in paise (₹1,179)
+            "currency": "INR",
+            "name": "PairUp",
+            "description": "AI Productivity Kit - Digital Tools Bundle",
+            "image": "https://via.placeholder.com/128x128/ff3366/ffffff?text=PU",
+            "order_id": "", // This will be empty for test mode
+            "handler": function (response) {
+                alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                // In a real scenario, you would send this to your backend
+                console.log("Payment Response:", response);
+                // Redirect to success page
+                window.location.href = "index.html?payment=success";
+            },
+            "prefill": {
+                "name": "Test User",
+                "email": "test@example.com",
+                "contact": "9999999999"
+            },
+            "notes": {
+                "product": "AI Productivity Kit",
+                "category": "IT & Software"
+            },
+            "theme": {
+                "color": "#ff3366"
+            },
+            "modal": {
+                "ondismiss": function() {
+                    console.log("Payment modal closed");
+                }
+            }
+        };
+
+        document.getElementById('pay-button').onclick = function(e) {
+            e.preventDefault();
+            const rzp = new Razorpay(options);
+            rzp.open();
+        };
+
+        // Update product info based on URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const product = urlParams.get('product');
+        
+        if (product === 'selfcare') {
+            document.getElementById('product-name').textContent = 'Self-Care Bundle';
+            document.getElementById('product-price').textContent = '₹499';
+            document.getElementById('subtotal').textContent = '₹499';
+            document.getElementById('tax').textContent = '₹90';
+            document.getElementById('total').innerHTML = '<strong>₹589</strong>';
+            document.getElementById('pay-button').textContent = 'Pay ₹589';
+            options.amount = "58900";
+            options.description = "Self-Care Bundle - Wellness & Mindfulness Kit";
+        } else if (product === 'remotework') {
+            document.getElementById('product-name').textContent = 'Remote Work Pack';
+            document.getElementById('product-price').textContent = '₹999';
+            document.getElementById('subtotal').textContent = '₹999';
+            document.getElementById('tax').textContent = '₹180';
+            document.getElementById('total').innerHTML = '<strong>₹1,179</strong>';
+            document.getElementById('pay-button').textContent = 'Pay ₹1,179';
+            options.amount = "117900";
+            options.description = "Remote Work Pack - Essential Tools for Remote Workers";
+        }
+    </script>
+</body>
+</html>
