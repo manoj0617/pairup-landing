@@ -1,6 +1,6 @@
 # PairUp - Personalized Product Discovery
 
-A modern, responsive e-commerce landing page for PairUp, an AI-powered platform for discovering personalized lifestyle accessories, gadgets, and digital goods.
+A modern, responsive e-commerce landing page for PairUp, an AI-powered platform for discovering personalized digital tools, lifestyle kits, and software bundles under the IT & Software category.
 
 ## Features
 
@@ -9,18 +9,22 @@ A modern, responsive e-commerce landing page for PairUp, an AI-powered platform 
 - Semantic HTML5 structure
 - Lightweight CSS with no external libraries or frameworks
 - Accessible design with proper ARIA labels
-- Fast loading and GitHub Pages compatible
+- Fast loading and Vercel deployment compatible
 - Product showcase with cards layout
 - Navigation bar with smooth scrolling
+- Razorpay test payment integration
+- Professional e-commerce appearance
 
 ## Structure
 
 - `index.html` - Main landing page with hero section and product showcase
+- `demo-checkout.html` - Secure checkout page with Razorpay integration
 - `styles.css` - Custom styling with responsive design and e-commerce layout
 - `contact.html` - Customer support and contact information
 - `terms.html` - Terms of service
-- `refunds.html` - Refund policy
+- `refunds.html` - Returns and refund policy
 - `shipping.html` - Shipping information
+- `vercel.json` - Vercel deployment configuration
 
 ## Design Elements
 
@@ -43,12 +47,28 @@ A modern, responsive e-commerce landing page for PairUp, an AI-powered platform 
 
 ## Deployment
 
-This e-commerce landing page is built to work on any static hosting service:
+This e-commerce landing page is optimized for Vercel deployment:
 
-1. GitHub Pages (recommended)
+1. **Vercel** (recommended) - `https://pairup.vercel.app`
 2. Netlify
-3. Vercel
+3. GitHub Pages
 4. Any standard web hosting service
+
+### Deploying to Vercel
+
+1. Push your code to GitHub
+2. Visit [vercel.com](https://vercel.com) and sign in with GitHub
+3. Click "New Project"
+4. Import the `pairup-landing` repository
+5. Deploy with default settings
+6. Your site will be available at `https://pairup-landing.vercel.app`
+
+## Payment Integration
+
+- **Razorpay Test Integration**: Secure checkout with test payment gateway
+- **Test Key**: `rzp_test_1DP5mmOlF5G5ag`
+- **Categories**: IT & Software products
+- **Currency**: INR (₹) with GST calculation
 
 ## Local Development
 
@@ -61,13 +81,20 @@ To view the site locally:
 
 ## Business Information
 
-The website serves as an e-commerce platform for PairUp, which specializes in AI-powered product discovery. The landing page provides:
+The website serves as a legitimate e-commerce platform for PairUp, specializing in AI-powered product discovery under the **IT & Software** category. The platform provides:
 
-- Platform overview and value proposition
-- Featured product showcase
-- How the AI recommendation system works
-- Customer contact information
+- AI-enhanced product recommendations
+- Digital tools and productivity kits
+- Software bundles and lifestyle solutions
+- Secure payment processing via Razorpay
+- Professional customer support
 - Comprehensive policy pages (terms, refunds, shipping)
+
+## Products Featured
+
+1. **AI Productivity Kit** - ₹999 (Digital tools for enhanced productivity)
+2. **Self-Care Bundle** - ₹499 (Wellness and mindfulness software)
+3. **Remote Work Pack** - ₹999 (Essential tools for remote workers)
 
 ## Customization
 
